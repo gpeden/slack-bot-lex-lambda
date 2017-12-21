@@ -3,6 +3,7 @@
     "jest": "^19.0.2"
   },
   "dependencies": {
-    "@slack/client": "^3.9.0"
+    "@slack/client": "^3.9.0",
+    "jest-cli": "^22.0.3"
   }
 }

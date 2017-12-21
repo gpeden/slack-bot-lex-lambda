@@ -1,7 +1,4 @@
-namespace = "slackbot-challenge"
-
-lambda_function_name = "slackbot"
-
-s3_bucket_name = "io-hashicorp-slackbot"
-
-aws_region = "us-east-1"
+namespace = "gpeden-slackbot-challenge"
+lambda_function_name = "gpeden-slackbot"
+s3_bucket_name = "gpeden-lex-slackbot"
+aws_region = "eu-west-1"

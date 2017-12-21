@@ -6,9 +6,9 @@ var dispatcher = require('./dispatcher');
 
 var intentStub = {
   currentIntent: {
-    name: 'WhatTimezone',
+    name: 'WhatTimeZone',
     slots: {
-      User: 'nicjackson'
+      User: 'gpeden'
     }
   }
 };
@@ -25,12 +25,12 @@ describe('dispatch', () => {
     dispatcher.dispatch(intentStub, mockSlack,(outcome) => {
       expect(outcome.dialogAction.fulfillmentState).toEqual('Fulfilled');
       expect(outcome.dialogAction.message).toBeDefined();
-      expect(outcome.dialogAction.message.content).toEqual('Sorry I can\'t find user: nicjackson');
+      expect(outcome.dialogAction.message.content).toEqual('Sorry I can\'t find user: gpeden');
       done();
     });
-    
+
   });
-  
+
   test('calls the slack API with known user', done => {
     var mockSlack = {
       getUserDetails: function(user, callback) {
@@ -41,12 +41,12 @@ describe('dispatch', () => {
     dispatcher.dispatch(intentStub, mockSlack, (outcome) => {
       expect(outcome.dialogAction.fulfillmentState).toEqual('Fulfilled');
       expect(outcome.dialogAction.message).toBeDefined();
-      expect(outcome.dialogAction.message.content).toEqual('nicjackson is in British Summer Time');
+      expect(outcome.dialogAction.message.content).toEqual('gpeden is in British Summer Time');
       done();
     });
-    
+
   });
-  
+
   test('returns error when error from slack API', done => {
     var mockSlack = {
       getUserDetails: function(user, callback) {
@@ -58,6 +58,6 @@ describe('dispatch', () => {
       expect(outcome.dialogAction.fulfillmentState).toEqual('Failed');
       done();
     });
-    
+
   });
 });

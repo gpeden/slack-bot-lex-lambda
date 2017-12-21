@@ -89,13 +89,13 @@ exports.dispatch = function(intentRequest, slackClient, callback) {
 
   const name = intentRequest.currentIntent.name;
 
-  if(name == 'WhatTimezone') {
+  if(name == 'WhatTimeZone') {
      const user = intentRequest.currentIntent.slots.User;
 
      slackClient.getUserDetails(user, (ret) => {
       var message = { contentType: 'PlainText', content: '' };
       var outcome = 'Failed';
-      
+
       if (ret.err === undefined) {
         outcome = 'Fulfilled';
         if (ret.timezone !== undefined) {
@@ -106,13 +106,13 @@ exports.dispatch = function(intentRequest, slackClient, callback) {
       }else {
         console.log("error: " + ret.err);
       }
-      
+
       callback(close(
         null,
         outcome,
         message,
         null));
-    });     
+    });
 
     return;
   }

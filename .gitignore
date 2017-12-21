@@ -2,6 +2,7 @@
 _build
 terraform.tfstate
 terraform.tfstate.backup
+terraform/.terraform
 .envrc
 *.zip
 node_modules
