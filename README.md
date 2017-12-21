@@ -44,4 +44,4 @@ Run...
 $ make deploy
 ```
 
-The function will be deployed to `us-east-1` virginia. See [AWS Region Table][https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/] for regions that currently support lex.
+The function will be deployed to `us-east-1` virginia. See [AWS Region Table](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/) for regions that currently support lex.
